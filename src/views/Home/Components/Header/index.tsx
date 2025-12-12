@@ -1,8 +1,8 @@
 import { Avatar } from "antd";
 
-import LogoFile from "@/assets/icons/logo.svg";
+import LogoFile from "src/assets/icons/logo.svg";
 import { AvatarSize } from "@/enums/antComponentTypes";
-import CompNameFile from "@/assets/icons/name-logo.svg";
+import CompNameFile from "src/assets/icons/name-logo.svg";
 
 import styles from "./header.module.scss";
 
