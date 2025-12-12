@@ -1,0 +1,16 @@
+@use "src/styles/variables" as vars;
+@use "src/styles/fonts";
+
+.table {
+  height: 100%;
+    :global {
+        .ant-table,
+        .ant-table .ant-table-header {
+            border-radius: 0;
+        }
+
+        .ant-table-thead {
+            height: 6rem;
+        }
+    }
+}

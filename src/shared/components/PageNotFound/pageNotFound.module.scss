@@ -1,0 +1,28 @@
+@use "src/styles/fonts" as font;
+@use "src/styles/variables" as vars;
+@use "src/styles/helpers" as helpers;
+
+.pageNotFound {
+  .wrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    @include helpers.flexibility(center, column);
+
+    .sadFace {
+      height: 4rem;
+      width: 4rem;
+      padding-bottom: 1.6rem;
+    }
+
+    .content {
+      @include helpers.setFont(primary-font-medium, 1.8rem, vars.$primary-color);
+    }
+
+    .subContent {
+      @include helpers.setFont(primary-font-regular, 1.4rem, vars.$primary-color);
+    }
+  }
+}

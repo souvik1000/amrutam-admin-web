@@ -1,0 +1,73 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as vars;
+
+.ingredientContainer {
+    height: 100%;
+
+    .ingredientItems {
+        height: 38.4rem;
+        margin-top: 2.4rem;
+        border-radius: 1.6rem;
+        padding: 1.6rem 1.2rem;
+        background-color: vars.$base-color;
+
+        .itemsHeader {
+            @include helpers.flexibility("space-between");
+
+            .headerLeft {
+                gap: 1.6rem;
+                margin-left: 1.2rem;
+                @include helpers.flexibility("space-between");
+
+                .title {
+                    @include helpers.setFont(
+                        secondary-font-semibold,
+                        1.4rem,
+                        vars.$base-dark-color
+                    );
+                }
+            }
+
+            .headerRight {
+                gap: 1.2rem;
+                @include helpers.flexibility("space-between");
+            }
+        }
+
+        .itemsList {
+            height: calc(100% - 7rem);
+
+            .ingredientsTable {
+                height: 100%;
+
+                .ingredientNameCell {
+                    @include helpers.flexibility;
+                    @include helpers.setFont(
+                        secondary-font-regular,
+                        1.4rem,
+                        vars.$table-highlight-text
+                    );
+                    
+                    gap: 1.2rem;
+                    justify-content: flex-start;
+                }
+
+                .ingredientDescription {
+                    @include helpers.setFont(
+                        secondary-font-regular,
+                        1.4rem,
+                        vars.$base-dark-color
+                    );
+                }
+
+                .ingredientStatus {
+                    @include helpers.setFont(
+                        secondary-font-bold,
+                        1.2rem,
+                        vars.$table-highlight-text
+                    );
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use "src/styles/fonts";
+@use "src/styles/helpers";
+@use "src/styles/variables" as vars;
+
+.searchWrapper {
+  gap: 1.6rem;
+  display: flex;
+  align-items: center;
+  
+  .searchComponent {
+    width: 264px;
+    height: 3.6rem;
+    border-radius: 1.2rem;
+    border-color: transparent;
+    background-color: vars.$background-color-1;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:not(:placeholder-shown) {
+      border-color: transparent;
+    }
+
+    :global {
+      .ant-input-wrapper {
+        padding-right: 3.2rem;
+      }
+      
+      .ant-input {
+        &::placeholder {
+          width: 100%;
+          opacity: 0.5;
+          overflow: hidden;
+          font-weight: 500;
+          font-size: 1.4rem;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: vars.$primary-color;
+        }
+      }
+    }
+
+    // :global() {
+    // }
+
+  }
+}

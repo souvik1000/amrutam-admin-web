@@ -1,0 +1,289 @@
+@use "variables";
+@use "fonts";
+
+/* Helpers CSS */
+
+.h-100 {
+    height: 100% !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-underline {
+    text-decoration: underline !important;
+}
+
+.text-primary {
+    color: variables.$primary-color;
+}
+
+.text-light-grey {
+    color: variables.$light-grey;
+}
+
+.text-dark-grey {
+    color: variables.$dark-grey;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.bb-5 {
+    border-bottom: (variables.$spacer-y * 1.25) solid variables.$primary-color !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.float-none {
+    float: none !important;
+}
+
+// .primary-black {
+//   color: variables.$primary-black !important;
+// }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+/* Padding */
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+/* Margins */
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mt-1 {
+    margin-top: (variables.$spacer-y * 0.25) !important;
+}
+
+.mt-2 {
+    margin-top: (variables.$spacer-y * 0.5) !important;
+}
+
+.mt-3 {
+    margin-top: (variables.$spacer-y * 0.75) !important;
+}
+
+.mt-4 {
+    margin-top: (variables.$spacer-y * 1) !important;
+}
+
+.mt-5 {
+    margin-top: (variables.$spacer-y * 1.25) !important;
+}
+
+.mb-2 {
+    margin-bottom: (variables.$spacer-y * 0.5) !important;
+}
+
+.mb-3 {
+    margin-bottom: (variables.$spacer-y * 0.75) !important;
+}
+
+.mb-4 {
+    margin-bottom: (variables.$spacer-y * 1) !important;
+}
+
+.mb-5 {
+    margin-bottom: (variables.$spacer-y * 1.25) !important;
+}
+
+.ml-2 {
+    margin-left: (variables.$spacer-x * 0.5) !important;
+}
+
+.ml-3 {
+    margin-left: (variables.$spacer-x * 0.75) !important;
+}
+
+.ml-4 {
+    margin-left: (variables.$spacer-x * 1) !important;
+}
+
+.ml-5 {
+    margin-left: (variables.$spacer-x * 1.25) !important;
+}
+
+.mr-1 {
+    margin-right: (variables.$spacer-x * 0.25) !important;
+}
+
+.mr-2 {
+    margin-right: (variables.$spacer-x * 0.5) !important;
+}
+
+.mr-3 {
+    margin-right: (variables.$spacer-x * 0.75) !important;
+}
+
+.mr-4 {
+    margin-right: (variables.$spacer-x * 1) !important;
+}
+
+.mr-5 {
+    margin-right: (variables.$spacer-x * 1.25) !important;
+}
+
+.pointer {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  top: 0.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: variables.$details-text;
+}
+
+.popup-border {
+  width: 100%;
+  height: 1px;
+  background-color: variables.$popup-border;
+}
+
+.border {
+    width: 100%;
+    height: 1px;
+    margin-top: 2.4rem;
+    background-color: variables.$border-color;
+}
+
+.closeIcon {
+  opacity: 0.5;
+  font-size: 1.7rem;
+  color: variables.$primary-color;
+}
+
+.enabled {
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.material-symbols-sharp {
+  font-variation-settings: "FILL" 1;
+}
+
+.centered-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.distributed-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flexibility($type: "center", $flx-dir: "row") {
+    flex-direction: $flx-dir;
+
+    @if $type == "center" {
+        @extend .centered-flex;
+    } @else if $type == "space-between" {
+        @extend .distributed-flex;
+    }
+}
+
+@mixin setFont($fontClass, $fontSize, $color) {
+    color: $color;
+    font-size: $fontSize;
+    @extend #{"."}#{$fontClass};
+}
+
+.field {
+    gap: 0.4rem;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+  .fieldLabel {
+    z-index: 1;
+    top: -0.8rem;
+    left: 1.2rem;
+    padding: 0 0.4rem;
+    position: absolute;
+    background-color: variables.$base-color;
+
+    @include setFont(
+        secondary-font-medium,
+        1.4rem,
+        variables.$base-dark-color
+    );
+
+    .requiredField {
+      margin-left: 0.2rem;
+      color: variables.$error-color;
+    }
+  }
+}
+
+// @mixin flex-center($type: "row") {
+//   @extend .centered-flex;
+
+//   @if $type == "column" {
+//     flex-direction: column;
+//   } @else {
+//     flex-direction: row;
+//   }
+// }

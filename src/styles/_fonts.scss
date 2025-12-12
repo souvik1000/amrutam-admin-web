@@ -1,0 +1,28 @@
+// Import DM Sans font
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap");
+
+// Font definitions
+$primary-font: "DM Sans", sans-serif;
+$secondary-font: "Poppins", sans-serif;
+
+//fonts-variations
+$fonts: (
+  ($primary-font, "primary-font", "belowregular", 300),
+  ($primary-font, "primary-font", "regular", 400),
+  ($primary-font, "primary-font", "medium", 500),
+  ($primary-font, "primary-font", "semibold", 600),
+  ($primary-font, "primary-font", "bold", 700),
+  ($secondary-font, "secondary-font", "belowregular", 300),
+  ($secondary-font, "secondary-font", "regular", 400),
+  ($secondary-font, "secondary-font", "medium", 500),
+  ($secondary-font, "secondary-font", "semibold", 600),
+  ($secondary-font, "secondary-font", "bold", 700)
+);
+
+@each $font, $label, $name, $weight in $fonts {
+  .#{$label}-#{$name} {
+    font-family: $font;
+    font-weight: $weight;
+  }
+}

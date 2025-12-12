@@ -1,0 +1,7 @@
+@use  "src/styles/helpers" as helpers;
+
+.loader-container {
+  height: 100%;
+  
+  @include helpers.flexibility;
+}

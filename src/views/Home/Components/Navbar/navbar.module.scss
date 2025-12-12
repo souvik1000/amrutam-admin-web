@@ -1,0 +1,55 @@
+@use "src/styles/variables" as vars;
+@use "src/styles/helpers" as helpers;
+
+.navbarWrapper {
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 0 1.6rem 0 0;
+    background-color: vars.$base-color;
+    
+    .navbarMenu {
+        height: 100%;
+        display: flex;
+        overflow-y: auto;
+        padding: 0 1.6rem;
+        flex-direction: column;
+        background: transparent;
+        align-items: flex-start;
+        
+        .iconWrapper {
+            gap: 1.6rem;
+            @include helpers.flexibility;
+            justify-content: space-around;
+            @include helpers.setFont(primary-font-regular, 1.3rem, vars.$non-selected-menu);
+
+
+            .icon {
+                font-size: 2.4rem;
+                color: vars.$non-selected-menu;
+
+                &.iconActive {
+                    color: vars.$primary-color;
+                }
+            }
+
+            &.iconActive {
+                @include helpers.setFont(primary-font-semibold, 1.3rem, vars.$selected-menu);
+            }
+        }
+
+        &.navbarMenuSuperAdmin {
+            justify-content: center;
+            // gap: 0.4rem;
+        }
+
+        .navbarMenuItem {
+            @include helpers.flexibility;
+            justify-content: start;
+
+            &:active {
+                background-color: transparent;
+            }
+        }
+    }
+}

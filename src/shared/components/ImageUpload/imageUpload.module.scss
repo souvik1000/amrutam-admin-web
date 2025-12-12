@@ -1,0 +1,47 @@
+@use 'src/styles/helpers' as helpers;
+@use 'src/styles/variables' as vars;
+
+.imageStyle {
+    width: 22rem;
+    height: 22rem;
+    border-radius: 0.8rem;
+    border: 1px dashed vars.$custom-border;
+}
+
+.uploadWrapper {
+    position: relative;
+
+    .retakeImage {
+        top: -0.8rem;
+        left: 20.5rem;
+        padding: 0.2rem;
+        font-weight: 600;
+        font-size: 1.6rem;
+        position: absolute;
+        @extend .closeIcon;
+        border-radius: 50%;
+        color: vars.$primary-color;
+        border: 1px solid vars.$custom-border;
+        background-color: vars.$custom-background;
+    }
+
+    .uploadedImage {
+        object-fit: cover;
+        @extend .imageStyle;
+    }
+
+    .uploadComponent {
+        @extend .imageStyle;
+        @include helpers.flexibility(center, column);
+        @include helpers.setFont(
+            secondary-font-medium,
+            1.6rem,
+            vars.$custom-text-color
+        );
+        
+        gap: 0.8rem;
+        cursor: pointer;
+        color: vars.$custom-text-color;
+        background-color: vars.$custom-background;
+    }
+}

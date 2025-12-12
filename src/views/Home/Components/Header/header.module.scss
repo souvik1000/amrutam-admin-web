@@ -1,0 +1,44 @@
+@use 'src/styles/variables' as vars;
+@use 'src/styles/helpers' as helpers;
+
+.header {
+    height: 10vh;
+    padding: 0 1.6rem;
+    background-color: vars.$base-color;
+    @include helpers.flexibility("space-between");
+
+    .logo {
+        gap: 1rem;
+        height: 100%;
+        @include helpers.flexibility;
+    }
+
+    .userInfo {
+        gap: 1rem;
+        height: 100%;
+        padding: 0 5.6rem;
+        @include helpers.flexibility;
+
+        .userAvatar {
+            font-size: 1.6rem;
+            background-color: vars.$primary-color;
+        }
+
+        .userDetails {
+            gap: 0.4rem;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            justify-content: center;
+
+            .userName {
+                @include helpers.setFont(primary-font-semibold, 1.6rem, vars.$primary-color);
+            }
+    
+            .userRole {
+                @include helpers.setFont(primary-font-medium, 1.2rem, vars.$text-subtitle);
+            }
+        }
+
+    }
+}

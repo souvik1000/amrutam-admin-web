@@ -1,0 +1,34 @@
+@use "variables" as variables;
+@use "helpers";
+@use "antOverrides";
+@use "fonts";
+
+html {
+  // Converting default 16px to 10px for easy calculation
+  font-size: 62.5%;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* General component styles */
+body {
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: variables.$primary-black;
+  background-color: variables.$background-color-1;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+input {
+  font-family: 'Roboto', sans-serif !important;
+}
