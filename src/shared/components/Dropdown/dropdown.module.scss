@@ -1,0 +1,24 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as vars;
+
+.dropdownFieldWithLabel {
+    @extend .field;
+    margin-top: 0.8rem;
+
+    :global {
+        .ant-select {
+            width: 100%;
+            height: 4.4rem;
+        }
+    }
+}
+
+.dropdownFieldWithOutLabel {
+    @extend .field;
+
+    :global {
+        .ant-select {
+            height: 3.8rem;
+        }
+    }
+}

@@ -1,0 +1,263 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as variables;
+
+// /* Overrides for Ant Design components */
+.ant-spin .ant-spin-dot-holder {
+    color: variables.$primary-color;
+}
+
+.ant-select {
+    width: 100%;
+
+    .ant-select-selector {
+        border-color: variables.$primary-color;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus-visible,
+        &:focus-within {
+            border-color: variables.$primary-color !important;
+        }
+    }
+}
+
+.ant-select-dropdown .ant-select-item-option {
+    @include helpers.setFont(primary-font-regular, 1.4rem, variables.$primary-color);
+}
+
+.ant-popover .ant-popover-inner {
+    padding: 0;
+    width: 10.8rem;
+    border: 1px solid variables.$popup-border;
+}
+
+.ant-popover-inner-content {
+    height: 100%;
+    width: 100%;
+}
+
+.ant-popover-placement-bottomRight > .ant-popover-arrow {
+    display: none;
+}
+
+.ant-menu .ant-menu-submenu {
+    width: 100%;
+}
+
+.ant-menu-title-content {
+    display: flex;
+    width: 100%;
+}
+
+.ant-menu-item {
+    padding: 0 1.6rem;
+}
+
+.ant-menu-light.ant-menu-root.ant-menu-vertical {
+    border-inline-end: none;
+}
+
+.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline{
+    background-color: transparent;
+}
+
+.ant-menu-light .ant-menu-submenu-selected>.ant-menu-submenu-title {
+    color: variables.$primary-color;
+}
+
+.ant-menu-light .ant-menu-item-selected {
+    background-color: variables.$active-bg-menu;
+}
+
+.ant-breadcrumb ol {
+    align-items: center;
+}
+
+.ant-btn {
+    height: 4rem;
+    min-width: 18.8rem;
+    border-radius: 1.2rem;
+
+    @include helpers.setFont(
+        secondary-font-regular,
+        1.4rem,
+        variables.$base-color
+    );
+}
+
+.ant-btn-color-primary.ant-btn-variant-solid {
+    color: variables.$base-color;
+    background-color: variables.$primary-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: variables.$base-color !important;
+        background-color: variables.$primary-color !important;
+    }
+}
+
+.ant-btn-color-default.ant-btn-variant-solid {
+    color: variables.$primary-color;
+    background-color: variables.$base-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: variables.$primary-color !important;
+        background-color: variables.$base-color !important;
+    }
+}
+
+// /* Steps Components */
+.ant-steps
+    .ant-steps-item-custom
+    > .ant-steps-item-container
+    > .ant-steps-item-icon
+    > .ant-steps-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    border: 2px solid variables.$stepper-color;
+
+    @include helpers.flexibility;
+    @include helpers.setFont(
+        secondary-font-medium,
+        1.3rem,
+        variables.$stepper-color
+    );
+}
+
+.ant-steps.ant-steps-label-vertical .ant-steps-item-content {
+    margin-top: 0rem;
+}
+
+.ant-steps.ant-steps-label-vertical
+    .ant-steps-item-content
+    > .ant-steps-item-title {
+    width: 190px;
+    transform: translateX(-20%);
+
+    @include helpers.setFont(
+        secondary-font-medium,
+        1.3rem,
+        variables.$stepper-color
+    );
+}
+
+.ant-steps
+    .ant-steps-item-process
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-title,
+.ant-steps
+    .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-title {
+    color: variables.$primary-color;
+}
+.ant-steps.ant-steps-label-vertical
+    .ant-steps-item-content
+    > .ant-steps-item-title {
+    @include helpers.setFont(
+        secondary-font-medium,
+        1.3rem,
+        variables.$stepper-color
+    );
+}
+
+.ant-steps .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
+    color: variables.$primary-color !important;
+    border-color: variables.$primary-color !important;
+}
+
+.ant-steps
+    .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-tail::after,
+.ant-steps
+    .ant-steps-item-process
+    > .ant-steps-item-container
+    > .ant-steps-item-tail::after,
+.ant-steps
+    .ant-steps-item-wait
+    > .ant-steps-item-container
+    > .ant-steps-item-tail::after {
+    background-color: variables.$stepper-color;
+}
+
+.ant-table,
+.ant-table-container,
+.ant-table-content {
+    background-color: transparent;
+}
+
+.ant-table-thead > tr > .ant-table-cell {
+    @include helpers.setFont(
+        secondary-font-medium,
+        1.2rem,
+        variables.$base-dark-color
+    );
+
+    padding: 0 1.6rem !important;
+    font-weight: 500 !important;
+    color: variables.$base-dark-color !important;
+}
+
+.ant-table-thead > tr > th {
+    background-color: transparent !important;
+}
+
+.ant-table-tbody > tr > td {
+    border-bottom: transparent !important;
+}
+
+.ant-table-tbody .ant-table-row.ant-table-row-selected > .ant-table-cell {
+    background-color: variables.$base-color !important;
+}
+
+.ant-table-wrapper
+    .ant-table-thead
+    > tr
+    > th:not(:last-child):not(.ant-table-selection-column):not(
+        .ant-table-row-expand-icon-cell
+    ):not([colspan])::before {
+    display: none;
+}
+
+.ant-pagination .anticon {
+    color: variables.$base-dark-color !important;
+}
+
+.ant-pagination .ant-pagination-item a {
+    @include helpers.setFont(
+        secondary-font-regular,
+        1.2rem,
+        variables.$pagination-text
+    );
+}
+
+.ant-pagination .ant-pagination-item-active {
+    border-color: variables.$table-highlight-text !important;
+}
+
+/* Radio Group */
+.ant-radio {
+    .ant-radio-inner {
+        border-color: variables.$redio-border;
+    }
+
+    &.ant-radio-checked {
+        .ant-radio-inner {
+            border-color: variables.$redio-border;
+            background-color: variables.$redio-border;
+
+            &::after {
+                background-color: transparent;
+                border-color: variables.$redio-border;
+            }
+        }
+    }
+}

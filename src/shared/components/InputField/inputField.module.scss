@@ -1,0 +1,35 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as vars;
+
+.inputFieldWithLabel {
+  @extend .field;
+  margin-top: 0.8rem;
+
+  :global {
+    .ant-input {
+      height: 4.4rem;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: vars.$primary-color;
+      }
+    }
+  }
+}
+
+.inputFieldWithOutLabel {
+  @extend .field;
+
+  :global {
+    .ant-input {
+      height: 3.8rem;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: vars.$primary-color;
+      }
+    }
+  }
+}

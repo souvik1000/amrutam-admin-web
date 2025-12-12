@@ -1,0 +1,45 @@
+/* Color palette */
+$dark-grey: #8898AA;
+$base-color: #ffffff;
+$error-color: #E70000;
+$light-grey: #00000015;
+$primary-color: #3A643B;
+$primary-black: #464646;
+$text-subtitle: #9DA4B0;
+$base-dark-color: #000000;
+$secondary-color: #2F522F;
+
+$popup-border: #E5E7EB;
+$border-color: #D7D7D7;
+$selected-menu: #333548;
+$active-bg-menu: #F3F4F6;
+$non-selected-menu: #474856BF;
+
+$background-color-1: #2E37A40D;
+
+$table-highlight-text: #3A643C;
+
+$pagination-text: #959396;
+$redio-border: #6E6E6E;
+
+$stepper-color: #878890;
+
+$details-header: #232323;
+$details-text: #161616;
+
+$custom-border: #9DB29D;
+$custom-background: #EAF2EA;
+$custom-text-color: #0C140C;
+
+/* Select */
+$select-border-color: rgb(202, 202, 202);
+$select-hover-border-color: $primary-color;
+$select-focus-box-shadow: 0 0 0 2px rgba($color: $primary-color, $alpha: 0.2);
+
+/* Shadows */
+$primary-shadow: 0 8px 22px #0000001A;
+$secondary-shadow: 0px 3px 6px #2C28281C;
+
+/* Spacer variables */
+$spacer-x : 1rem;
+$spacer-y : 1rem;

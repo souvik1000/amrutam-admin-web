@@ -1,0 +1,36 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as vars;
+
+.stepperContainer {
+    height: calc(100% - 2.6rem);
+
+    .stepperWrapper {
+        @include helpers.flexibility;
+
+        .stepper {
+            width: 80%;
+            cursor: pointer;
+            margin: 4.2rem 0;
+
+            .stepperBadge {
+                &.waittingStep {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+
+    .stepperChild {
+        padding: 2.4rem;
+        overflow-y: auto;
+        border-radius: 1.6rem;
+        height: calc(100% - 26.4rem);
+        background-color: vars.$base-color;
+    }
+
+    .stepperButtons {
+        gap: 2.4rem;
+        height: 6.8rem;
+        @include helpers.flexibility;
+    }
+}

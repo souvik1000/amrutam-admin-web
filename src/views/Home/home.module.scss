@@ -1,0 +1,22 @@
+@use 'src/styles/helpers' as helpers;
+@use 'src/styles/variables' as vars;
+
+.baseContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    .body {
+        height: Calc(100% - 10vh);
+
+        .bodyRow {
+            height: 100%;
+            padding-top: 2.8rem;
+
+            .itemInfo {
+                height: 100%;
+                padding: 0 7.6rem 1.6rem 4.4rem;
+            }
+        }
+    }
+}

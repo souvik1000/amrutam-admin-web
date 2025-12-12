@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                        // modern JS output
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],  // keep latest features
+    "allowJs": true,                           // allow JS files if needed
+    "skipLibCheck": true,                      // skip type checking for node_modules
+    "esModuleInterop": true,                   // required for default imports
+    "allowSyntheticDefaultImports": true,      // allow default imports from CommonJS modules
+    "strict": true,                            // enable all strict type checks
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",                        // Vite uses ES modules
+    "moduleResolution": "Node",                // Node module resolution
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,                            // Vite handles compilation
+    "jsx": "react-jsx",                        // modern JSX transform
+    "experimentalDecorators": true,            // required for class-transformer decorators
+    "emitDecoratorMetadata": true,             // required for decorator metadata
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ],                                         // include Vite types
+    "baseUrl": ".",                            // optional, for absolute imports
+    "paths": {                                 // optional, for alias paths
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "src/setupTests.ts", "src/mocks/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

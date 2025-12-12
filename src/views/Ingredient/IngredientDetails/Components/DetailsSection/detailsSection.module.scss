@@ -1,0 +1,42 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as vars;
+
+.detailsCard {
+    .detailsCardHeader {
+        @include helpers.flexibility("space-between");
+        
+        .headerLeft {
+            gap: 1.2rem;
+            @include helpers.flexibility;
+
+            .title {
+                @include helpers.setFont(
+                    secondary-font-semibold,
+                    2.4rem,
+                    vars.$details-header
+                );
+            }
+        }
+    }
+
+    &:not(:first-child) {
+        margin-top: 2.4rem;
+    }
+}
+
+.popoverMenu {
+    .menu {
+        cursor: pointer;
+        user-select: none;
+        
+        .status-active, .editActn {
+            padding: 0.8rem 3.2rem;
+            @include helpers.setFont(primary-font-regular, 1.2rem, vars.$primary-color);
+        }
+    
+        .status-inactive {
+            padding: 0.8rem 3.2rem;
+            @include helpers.setFont(primary-font-regular, 1.2rem, vars.$error-color);
+        }
+    }
+}

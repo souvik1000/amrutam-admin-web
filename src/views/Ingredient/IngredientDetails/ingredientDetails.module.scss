@@ -1,0 +1,46 @@
+@use "src/styles/helpers" as helpers;
+@use "src/styles/variables" as vars;
+
+.ingredientDetailsContainer {
+    height: 100%;
+
+    .ingredientDetailsCard {
+        padding: 2.4rem;
+        overflow-y: auto;
+        margin-top: 1.6rem;
+        border-radius: 1.6rem;
+        height: calc(100% - 9rem);
+        background-color: vars.$base-color;
+    }
+}
+
+.ingredientDetailSections {
+    .ingredientImg {
+        padding: 2.4rem 0;
+        @include helpers.flexibility;
+    }
+
+    .ingredientName {
+        @include helpers.setFont(
+            secondary-font-bold,
+            2.4rem,
+            vars.$details-text
+        );
+    }
+
+    .ingredientDesc {
+        @include helpers.setFont(
+            secondary-font-regular,
+            2rem,
+            vars.$primary-black
+        );
+    }
+
+    .sectionDescription {
+        @include helpers.setFont(
+            secondary-font-medium,
+            2rem,
+            vars.$primary-black
+        );
+    }
+}
