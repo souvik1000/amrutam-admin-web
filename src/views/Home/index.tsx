@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 
-import styles from "./Home.module.scss";
+import styles from "./home.module.scss";
 
 const Home = () => {
   return (
